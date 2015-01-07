@@ -1,2 +1,9 @@
-<h1>No photos</h1>
-<a href="#">Add a photo</a>
+<% if @photos.all.any? %>
+  <% @photos.all.each do |photo| %>
+    <%= photo.name %>
+  <% end %>
+<% else %>
+  <h1>No photos have been added yet</h1>
+  <a href="#">Add a photo</a>
+
+<% end %>
