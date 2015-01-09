@@ -43,4 +43,19 @@ feature 'photos' do
       expect(current_path).to eq "/photos/#{stag.id}"
     end
   end
+
+  context 'editing photos' do
+
+    before {Photo.create name: 'STAG'}
+
+    scenario 'let a user edit a photo' do
+      visit '/photos'
+      click_link 'Edit STAG'
+      fill_in 'Name', with: 'COW'
+      click_button 'Update Photo'
+      save_and_open_page
+      expect(page).to have_content 'COW'
+      expect(current_path).to eq '/photos'
+    end
+  end
 end
