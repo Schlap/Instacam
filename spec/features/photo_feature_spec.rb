@@ -53,9 +53,21 @@ feature 'photos' do
       click_link 'Edit STAG'
       fill_in 'Name', with: 'COW'
       click_button 'Update Photo'
-      save_and_open_page
       expect(page).to have_content 'COW'
       expect(current_path).to eq '/photos'
     end
+  end
+
+  context 'deleting photos' do
+
+    before {Photo.create name: 'STAG'}
+
+    scenario 'removes a photo when a user clicks a delete link' do
+      visit '/photos'
+      click_link 'Delete STAG'
+      expect(page).not_to have_content 'STAG'
+      expect(page).to have_content 'Photo deleted successfully'
+    end
+
   end
 end
