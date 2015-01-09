@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
     redirect_to photos_path
   else
     render 'new'
-    end
+   end
   end
 
   def edit
