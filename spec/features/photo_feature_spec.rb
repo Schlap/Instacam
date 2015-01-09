@@ -30,6 +30,17 @@ feature 'photos' do
       expect(page).to have_content 'Holiday in Turkey'
       expect(current_path).to eq '/photos'
     end
+
+    context 'an invalid photo' do
+      it 'does not let you submit a name that is too short' do
+        visit '/photos'
+        click_link 'Add a photo'
+        fill_in 'Name', with: 'ST'
+        click_button 'Create Photo'
+        expect(page).not_to have_css 'h2', text: 'ST'
+        expect(page).to have_content 'error'
+      end
+    end
   end
 
   context 'viewing photos' do
@@ -70,4 +81,5 @@ feature 'photos' do
     end
 
   end
+
 end

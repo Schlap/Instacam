@@ -30,6 +30,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-collection_matchers'
 end
 
 # Use ActiveModel has_secure_password

@@ -11,6 +11,15 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
+  def create
+    @photo = Photo.create(photo_params)
+  if @photo.save
+    redirect_to photos_path
+  else
+    render 'new'
+    end
+  end
+
   def edit
     @photo = Photo.find(params[:id])
   end
@@ -25,11 +34,6 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     flash[:notice] = 'Photo deleted successfully'
-    redirect_to '/photos'
-  end
-
-  def create
-    Photo.create(photo_params)
     redirect_to '/photos'
   end
 
