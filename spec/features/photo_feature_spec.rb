@@ -4,8 +4,8 @@ feature 'photos' do
   context 'no photos have been added' do
     scenario 'should display a prompt to add a photo' do
       visit '/photos'
-      expect(page).to have_content 'No photos'
-      expect(page).to have_link 'Add a photo'
+      expect(page).to have_content 'No photos have been added yet'
+      expect(page).not_to have_link 'Add a photo'
     end
   end
 
@@ -24,6 +24,11 @@ feature 'photos' do
   context 'creating photos' do
     scenario 'prompts user to fill out a form, then displays the new photo' do
       visit '/photos'
+      click_link 'Sign up'
+      fill_in 'Email', with: 'hadi@gmail.com'
+      fill_in 'Password', with: '12345678'
+      fill_in 'Password confirmation', with: '12345678'
+      click_button 'Sign up'
       click_link 'Add a photo'
       fill_in 'Name', with: 'Holiday in Turkey'
       click_button 'Create Photo'
@@ -34,6 +39,11 @@ feature 'photos' do
     context 'an invalid photo' do
       it 'does not let you submit a name that is too short' do
         visit '/photos'
+        click_link 'Sign up'
+        fill_in 'Email', with: 'hadi@gmail.com'
+        fill_in 'Password', with: '12345678'
+        fill_in 'Password confirmation', with: '12345678'
+        click_button 'Sign up'
         click_link 'Add a photo'
         fill_in 'Name', with: 'ST'
         click_button 'Create Photo'
@@ -61,6 +71,11 @@ feature 'photos' do
 
     scenario 'let a user edit a photo' do
       visit '/photos'
+      click_link 'Sign up'
+      fill_in 'Email', with: 'hadi@gmail.com'
+      fill_in 'Password', with: '12345678'
+      fill_in 'Password confirmation', with: '12345678'
+      click_button 'Sign up'
       click_link 'Edit STAG'
       fill_in 'Name', with: 'COW'
       click_button 'Update Photo'
@@ -75,6 +90,11 @@ feature 'photos' do
 
     scenario 'removes a photo when a user clicks a delete link' do
       visit '/photos'
+      click_link 'Sign up'
+      fill_in 'Email', with: 'hadi@gmail.com'
+      fill_in 'Password', with: '12345678'
+      fill_in 'Password confirmation', with: '12345678'
+      click_button 'Sign up'
       click_link 'Delete STAG'
       expect(page).not_to have_content 'STAG'
       expect(page).to have_content 'Photo deleted successfully'
