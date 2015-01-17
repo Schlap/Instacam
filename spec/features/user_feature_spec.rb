@@ -39,4 +39,22 @@ context "user signed in on the homepage" do
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
   end
+
+  it "can only delete or edit photos they have created" do
+    sign_in("bob@gmail.com", "87654321")
+    click_link "Add a photo"
+    fill_in("Name", with: 'Je Suis Charlie')
+    click_button "Create Photo"
+    click_link ("Sign out")
+    sign_in("tom@gmail.com", "12345678")
+    expect(page).to have_content("Je Suis Charlie")
+    expect(page).not_to have_content("Edit Je Suis Charlie")
+    expect(page).not_to have_content("Delete Je Suis Charlie")
+  end
+end
+
+
+def sign_in(email, password)
+  User.create(:email => email, :password => password)
+  visit('/')
 end

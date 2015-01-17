@@ -1,15 +1,19 @@
 == Instacam
 
-Instacam is your photo sharing social media platform. Snap pictures then upload them for all to see!
+Instacam is your photo sharing social media platform. Snap pictures then upload them for all to see! If you see a picture you like, like it so that person knows!
 
 == Tools
 
-
-
+* Ruby on Rails
+* Html/Css
+* RSpec/Rails
+* Capybara
+* Launchy(debugging)
+* Omniauth(facebook)
 
 == Learning Outcomes
 
 
 
 
-== What needs to be done
+== What I want to add
