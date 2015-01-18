@@ -5,6 +5,8 @@ gem 'omniauth-facebook'
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'cancan'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

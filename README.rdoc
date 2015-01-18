@@ -5,11 +5,17 @@ Instacam is your photo sharing social media platform. Snap pictures then upload 
 == Tools
 
 * Ruby on Rails
-* Html/Css
+* HTML5
+* CSS3
 * RSpec/Rails
 * Capybara
 * Launchy(debugging)
 * Omniauth(facebook)
+* PostgresQL
+* ActiveRecord
+* Amazon Web Services S3
+
+
 
 == Learning Outcomes
 
