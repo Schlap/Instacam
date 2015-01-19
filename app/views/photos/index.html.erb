@@ -2,6 +2,7 @@
   <% if @photos.any? %>
 
     <% @photos.all.each do |photo| %>
+
       <%= image_tag photo.image.url(:medium) %>
       <%= link_to "#{photo.name}", photo_path(photo) %>
 
@@ -16,9 +17,9 @@
       <%= link_to "Like #{photo.name}", photo_likes_path(photo), class: 'likes-link' %>
       <span class= "likes-count"><%= photo.likes.count %> </span> Likes
 
-    <% end %>
+  <% end %>
 
-      <% else %>
-      <h1>No photos have been added yet</h1>
+  <% else %>
+    <h1>No photos have been added yet</h1>
   <% end %>
 </main>
