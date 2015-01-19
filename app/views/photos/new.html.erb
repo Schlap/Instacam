@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <% if @photo.errors.any? %>
 <section id="errors" >
   <h2> <%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved: </h2>
@@ -9,9 +8,10 @@
   </ul>
 </section>
 <% end %>
-<%= form_for @photo do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<%= form_for @photo, html: {multipart: true} do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%- f.label :image %>
+<%= f.file_field :image %>
+<%= f.submit %>
 <% end %>
-<html>

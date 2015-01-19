@@ -8,6 +8,10 @@ gem 'pg'
 
 gem 'database_cleaner'
 
+gem 'paperclip'
+
+gem 'aws-sdk'
+
 gem 'poltergeist'
 
 gem 'cancan'
