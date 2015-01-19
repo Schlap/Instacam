@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'photos' do
+  
   context 'no photos have been added' do
     scenario 'should display a prompt to add a photo' do
       visit '/photos'
@@ -64,40 +65,4 @@ feature 'photos' do
       expect(current_path).to eq "/photos/#{stag.id}"
     end
   end
-
-  # context 'editing photos' do
-  #
-  #   before {Photo.create name: 'STAG'}
-  #
-  #   scenario 'let a user edit a photo' do
-  #     visit '/photos'
-  #     click_link 'Sign up'
-  #     fill_in 'Email', with: 'hadi@gmail.com'
-  #     fill_in 'Password', with: '12345678'
-  #     fill_in 'Password confirmation', with: '12345678'
-  #     click_button 'Sign up'
-  #     click_link 'Edit STAG'
-  #     fill_in 'Name', with: 'COW'
-  #     click_button 'Update Photo'
-  #     expect(page).to have_content 'COW'
-  #     expect(current_path).to eq '/photos'
-  #   end
-  # end
-  #
-  # context 'deleting photos' do
-  #
-  #   before {Photo.create name: 'STAG'}
-  #
-  #   scenario 'removes a photo when a user clicks a delete link' do
-  #     visit '/photos'
-  #     click_link 'Sign up'
-  #     fill_in 'Email', with: 'hadi@gmail.com'
-  #     fill_in 'Password', with: '12345678'
-  #     fill_in 'Password confirmation', with: '12345678'
-  #     click_button 'Sign up'
-  #     click_link 'Delete STAG'
-  #     expect(page).not_to have_content 'STAG'
-  #     expect(page).to have_content 'Photo deleted successfully'
-  #   end
-  # end
 end

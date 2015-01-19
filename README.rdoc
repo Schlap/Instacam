@@ -4,7 +4,8 @@ Instacam is your photo sharing social media platform. Snap pictures then upload 
 
 == Tools
 
-* Ruby on Rails
+* Ruby
+* Rails 4
 * HTML5
 * CSS3
 * RSpec/Rails
@@ -14,8 +15,10 @@ Instacam is your photo sharing social media platform. Snap pictures then upload 
 * PostgresQL
 * ActiveRecord
 * Amazon Web Services S3
-
-
+* Git/Heroku
+* Devise
+* CanCan
+* Embedded Ruby
 
 == Learning Outcomes
 
