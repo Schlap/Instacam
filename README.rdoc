@@ -22,7 +22,7 @@ Instacam is your photo sharing social media platform. Snap pictures then upload 
 
 == Learning Outcomes
 
-
+This vanilla rails project taught me the fundamentals of the MODEL VIEW CONTROLLER (MVC) paradigm. 
 
 
 == What I want to add

@@ -9,5 +9,4 @@ class Photo < ActiveRecord::Base
   def tag_names
     raise tag_names
   end
-
 end
