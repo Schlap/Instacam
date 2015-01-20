@@ -4,10 +4,12 @@
 
     <% @photos.each do |photo| %>
 
+        <h3><%= link_to "#{photo.name}", photo_path(photo) %></h3>
         <p><%= image_tag photo.image.url(:medium) %><p>
 
+        <%= photo.user.email %>
         <%= photo.created_at.strftime("%d . %m . %Y") %>
-        <%= link_to "#{photo.name}", photo_path(photo) %>
+
 
         <% if can? :update, photo %>
         <%= link_to "Edit", edit_photo_path(photo) %>
@@ -17,7 +19,7 @@
         <%= link_to "Delete", photo_path(photo), method: :delete %>
         <% end %>
 
-        <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
+        <p><%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %><p>
         <span class="likes-count"><%= photo.likes.count %></span> Likes
 
     <% end %>
