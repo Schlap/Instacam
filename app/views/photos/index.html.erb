@@ -1,22 +1,30 @@
 <main>
+
   <% if @photos.any? %>
 
-    <% @photos.all.each do |photo| %>
+    <% @photos.each do |photo| %>
+      <article class='photo-body'>
 
-      <%= image_tag photo.image.url(:medium) %>
-      <%= link_to "#{photo.name}", photo_path(photo) %>
+        <section class="image-container">
+          <p><%= image_tag photo.image.url(:medium) %><p>
+        </section>
 
-      <% if can? :update, photo %>
-      <%= link_to "Edit #{photo.name}", edit_photo_path(photo) %>
-      <% end %>
+        <section class='text-container'>
+          <p><%= photo.user.email %>
+          <p><%= photo.created_at.strftime("%d . %m . %Y") %></p>
+          <p><%= link_to "#{photo.name}", photo_path(photo) %></p>
 
-      <% if can? :destroy, photo %>
-        <%= link_to "Delete #{photo.name}", photo_path(photo), method: :delete %>
-      <% end %>
+          <p><% if can? :update, photo %><p>
+          <p><%= link_to "Edit #{photo.name}", edit_photo_path(photo) %></p>
+          <% end %>
 
-      <%= link_to "Like #{photo.name}", photo_likes_path(photo), class: 'likes-link' %>
-      <span class= "likes-count"><%= photo.likes.count %> </span> Likes
+          <p><% if can? :destroy, photo %></p>
+          <p><%= link_to "Delete #{photo.name}", photo_path(photo), method: :delete %></p>
+          <% end %>
 
+          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
+          <span class= "likes-count"><%= photo.likes.count %> </span> Likes
+        </section>
   <% end %>
 
   <% else %>

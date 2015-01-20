@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @photos = Photo.all
+    @photos = Photo.all.reverse
   end
 
   def new
@@ -41,6 +41,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:name, :image)
+    params.require(:photo).permit(:name, :image, :tag_names)
   end
 end

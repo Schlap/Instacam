@@ -43,7 +43,7 @@ context "user signed in on the homepage" do
   it "can only delete or edit photos they have created" do
     sign_in("bob@gmail.com", "87654321")
     click_link "Add a photo"
-    fill_in("Name", with: 'Je Suis Charlie')
+    fill_in("Title", with: 'Je Suis Charlie')
     click_button "Create Photo"
     click_link ("Sign out")
     sign_in("tom@gmail.com", "12345678")
