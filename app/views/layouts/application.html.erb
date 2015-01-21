@@ -1,10 +1,5 @@
   <!DOCTYPE html>
-    <html lang="en">
       <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Instacam</title>
 
@@ -16,55 +11,28 @@
 
     <body>
 
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <section class="container">
-          <section class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+      <a class="navbar-brand" href="/">Instacam</a>
 
-            </button>
-            <a class="navbar-brand" href="/">Instacam</a>
-          </section>
-
-          <section class="registration">
-            <% if user_signed_in? %>
-              <%= link_to "Add a photo", new_photo_path %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to "Sign in", new_user_session_path %>
-              <%= link_to "Sign up", new_user_registration_path %>
-              <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-            <% end %>
-          </section>
-      </nav>
-
-
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-
-        <footer>
-          <p>Designed by Hadi; Instacam 2015</p>
-        </footer>
-
+      <section class="login-container">
+        <% if user_signed_in? %>
+          <%= link_to "Add a photo", new_photo_path %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+        <% end %>
       </section>
 
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
 
-    <!-- <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-      </form>
-    </div>
-  </div> -->
+      <footer>
+      <p>Designed by Hadi; Instacam 2015</p>
+      </footer>
+
+      </section>
 
   </body>
 </html>

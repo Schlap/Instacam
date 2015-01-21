@@ -6,25 +6,29 @@
       <article class='photo-body'>
 
         <section class="image-container">
+          <h2><%= link_to "#{photo.name}", photo_path(photo) %></h2>
           <p><%= image_tag photo.image.url(:medium) %><p>
         </section>
 
         <section class='text-container'>
-          <p><%= photo.user.email %>
-          <p><%= photo.created_at.strftime("%d . %m . %Y") %></p>
-          <p><%= link_to "#{photo.name}", photo_path(photo) %></p>
+
+          <%= photo.user.email %>
+          <%= photo.created_at.strftime("%d . %m . %Y") %>
+
 
           <p><% if can? :update, photo %><p>
-          <p><%= link_to "Edit #{photo.name}", edit_photo_path(photo) %></p>
+          <%= link_to "Edit", edit_photo_path(photo) %>
           <% end %>
 
           <p><% if can? :destroy, photo %></p>
-          <p><%= link_to "Delete #{photo.name}", photo_path(photo), method: :delete %></p>
+          <p><%= link_to "Delete", photo_path(photo), method: :delete %></p>
           <% end %>
 
-          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
           <span class= "likes-count"><%= photo.likes.count %> </span> Likes
+          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
+
         </section>
+
   <% end %>
 
   <% else %>
