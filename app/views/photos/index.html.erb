@@ -16,12 +16,12 @@
           <%= photo.created_at.strftime("%d . %m . %Y") %>
 
           <ul class="edit-icons">
-            <p><% if can? :update, photo %><p>
-            <%= link_to "", edit_photo_path(photo), class: "fa fa-edit fa-2x" %>
+            <% if can? :update, photo %>
+            <%= link_to "", edit_photo_path(photo), class: "fa fa-edit fa-3x" %>
             <% end %>
 
-            <p><% if can? :destroy, photo %></p>
-            <p><%= link_to "", photo_path(photo), method: :delete, class: "fa fa-remove fa-2x" %></p>
+            <% if can? :destroy, photo %>
+            <%= link_to "", photo_path(photo), method: :delete, class: "fa fa-remove fa-3x" %>
             <% end %>
           </ul>
 

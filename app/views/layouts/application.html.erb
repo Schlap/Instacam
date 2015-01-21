@@ -13,9 +13,9 @@
   <section class="navbar">
 
     <h3><a class="brand" href="/">Instacam</a></h3>
-
+      <i class="fa fa-camera-retro fa-3x camera"></i>
       <% if user_signed_in? %>
-      <%= link_to "", new_photo_path, class: "fa fa-upload fa-3x", id: "upload-photo-icon" %>
+      <%= link_to "", new_photo_path, class: "fa fa-upload fa-4x", id: "upload-photo-icon" %>
       <%= link_to "", destroy_user_session_path, method: :delete, class: "fa fa-sign-out fa-3x", id: "sign-out-icon" %>
       <% else %>
       <%= link_to "", new_user_session_path, class: "fa fa-sign-in fa-3x", id: "sign-in-icon" %>
