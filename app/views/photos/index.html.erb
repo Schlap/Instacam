@@ -15,21 +15,19 @@
           <p class="user-email"><%= photo.user.email %></p>
           <%= photo.created_at.strftime("%d . %m . %Y") %>
 
-          <ul class="edit">
+          <ul class="edit-icons">
             <p><% if can? :update, photo %><p>
-            <!-- <i class="fa fa-edit fa-2x edit-icon"></i> -->
-            <%= link_to "Edit", edit_photo_path(photo) %>
+            <%= link_to "", edit_photo_path(photo), class: "fa fa-edit fa-2x" %>
             <% end %>
 
             <p><% if can? :destroy, photo %></p>
-            <!-- <p><i class="fa fa-remove fa-2x remove-icon"></i></p> -->
-            <p><%= link_to "Delete", photo_path(photo), method: :delete %></p>
+            <p><%= link_to "", photo_path(photo), method: :delete, class: "fa fa-remove fa-2x" %></p>
             <% end %>
           </ul>
 
-          <i class="fa fa-thumbs-o-up fa-2x"></i>
+          <%= link_to "", photo_likes_path(photo), id: 'likes-link', class: "fa fa-thumbs-o-up fa-2x" %>
           <span class= "likes-count"><%= photo.likes.count %> </span> Likes
-          <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
+
 
         </section>
       </article>

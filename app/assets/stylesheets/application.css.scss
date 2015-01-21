@@ -6,19 +6,20 @@ body {
   text-align: center;
 }
 
-.brand {
-  font-family: "Billabong";
-  font-size: 2em;
+a:-webkit-any-link {
+  color: -webkit-blue;
+  text-decoration: none;
+  cursor: auto;
 }
 
 .photo-body {
   padding-top: 5%;
 }
 
-a:-webkit-any-link {
-  color: -webkit-blue;
-  text-decoration: none;
-  cursor: auto;
+.brand {
+  font-family: "Billabong";
+  font-size: 2em;
+
 }
 
 .footer {
@@ -43,11 +44,19 @@ section.image-container {
 .camera {
   float: left;
   margin-left: 10%;
-  margin-top: 0.5%;
 }
 
-.login {
-  float: right;
-  margin-right: 10%;
-  margin-top: 1%;
+#sign-up-icon {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+#sign-out-icon {
+  position: absolute;
+  left: 87.5%;
+  top: 2.5%
+}
+
+#upload-photo-icon{
+
 }
