@@ -2,6 +2,10 @@
 
 Instacam is your photo sharing social media platform. Snap pictures then upload them for all to see! If you see a picture you like, like it so that person knows!... This is a bare bones trustworthy ruby on rails clone of Instagram. The idea was to learn about backend development for Rails.
 
+
+![alt tag](https://raw.github.com/schlap/Instacam/master/public/screen-shot.png)
+
+
 ## Tools
 
 - Ruby
@@ -27,7 +31,7 @@ This vanilla rails project taught me the fundamentals of the MODEL VIEW CONTROLL
 
 ## Personal goals
 
-- HTML/CSS
+- HTML/CSS(improve)
 - GeoLocation Capability
 - Tagging capability
 

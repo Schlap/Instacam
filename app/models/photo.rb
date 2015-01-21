@@ -6,8 +6,4 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   has_many :likes
 
-  def tag_names
-    raise tag_names
-  end
-
 end
