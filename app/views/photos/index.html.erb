@@ -17,18 +17,21 @@
 
 
           <p><% if can? :update, photo %><p>
+          <i class="fa fa-edit fa-2x"></i>
           <%= link_to "Edit", edit_photo_path(photo) %>
           <% end %>
 
           <p><% if can? :destroy, photo %></p>
+          <i class="fa fa-remove fa-2x"></i>
           <p><%= link_to "Delete", photo_path(photo), method: :delete %></p>
           <% end %>
 
+          <i class="fa fa-thumbs-o-up fa-2x"></i>
           <span class= "likes-count"><%= photo.likes.count %> </span> Likes
           <%= link_to "Like", photo_likes_path(photo), class: 'likes-link' %>
 
         </section>
-
+      </article>
   <% end %>
 
   <% else %>

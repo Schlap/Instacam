@@ -11,17 +11,18 @@
 
     <body>
 
-      <a class="navbar-brand" href="/">Instacam</a>
-
-      <section class="login-container">
-        <% if user_signed_in? %>
-          <%= link_to "Add a photo", new_photo_path %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign in", new_user_session_path %>
-          <%= link_to "Sign up", new_user_registration_path %>
-          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-        <% end %>
+        <section class="navbar">
+            <i class="fa fa-camera-retro fa-2x"></i>
+            <a class="brand" href="/">Instacam</a>
+          <% if user_signed_in? %>
+          <a href="/photos/new"<i class="fa fa-upload fa-2x"></i></a>
+          <a href="/users/sign_out"<i class="fa fa-sign-out fa-2x"></i></a>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+          <% end %>
       </section>
 
       <p class="notice"><%= notice %></p>
@@ -31,8 +32,5 @@
       <footer>
       <p>Designed by Hadi; Instacam 2015</p>
       </footer>
-
-      </section>
-
   </body>
 </html>

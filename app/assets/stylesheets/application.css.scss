@@ -1,4 +1,20 @@
+@import "font-awesome";
+
 body {
   font-family: "Futura (Light)";
   background: url('/images/waterfall.png') no-repeat fixed 95% 95%;
+}
+
+.brand {
+  font-family: "Billabong";
+  font-size: 2em;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.photo-body {
+  text-align: center;
+  padding-top: 5%;
 }
