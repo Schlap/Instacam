@@ -3,8 +3,8 @@
   <% if @photos.any? %>
 
     <% @photos.each do |photo| %>
-      <article class='photo-body'>
 
+      <section class='photo-body'>
         <section class="image-container">
           <h2><%= link_to "#{photo.name}", photo_path(photo) %></h2>
           <p><%= image_tag photo.image.url(:medium) %><p>
@@ -13,9 +13,9 @@
         <section class='text-container'>
 
           <p class="user-email"><%= photo.user.email %></p>
-          <%= photo.created_at.strftime("%d . %m . %Y") %>
+          <p><%= photo.created_at.strftime("%d . %m . %Y") %></p>
 
-          <ul class="edit-icons">
+          <section class="edit-icons">
             <% if can? :update, photo %>
             <%= link_to "", edit_photo_path(photo), class: "fa fa-edit fa-3x" %>
             <% end %>
@@ -23,14 +23,14 @@
             <% if can? :destroy, photo %>
             <%= link_to "", photo_path(photo), method: :delete, class: "fa fa-remove fa-3x" %>
             <% end %>
-          </ul>
+          </section>
 
           <%= link_to "", photo_likes_path(photo), id: 'likes-link', class: "fa fa-thumbs-o-up fa-2x" %>
           <span class= "likes-count"><%= photo.likes.count %> </span> Likes
 
 
         </section>
-      </article>
+      </section>
   <% end %>
 
   <% else %>

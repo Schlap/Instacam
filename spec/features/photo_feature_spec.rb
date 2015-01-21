@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'photos' do
 
   context 'no photos have been added' do
-    
+
     scenario 'should display a prompt to add a photo' do
       visit '/photos'
       expect(page).to have_content 'No photos have been added yet'
@@ -29,7 +29,7 @@ feature 'photos' do
     scenario 'prompts user to fill out a form, then displays the new photo' do
       visit '/photos'
       sign_up
-      click_link 'Add a photo'
+      find('#upload-photo-icon').click
       fill_in 'Title', with: 'Holiday in Turkey'
       click_button 'Create Photo'
       expect(page).to have_content 'Holiday in Turkey'
@@ -40,7 +40,7 @@ feature 'photos' do
       it 'does not let you submit a name that is too short' do
         visit '/photos'
         sign_up
-        click_link 'Add a photo'
+        find('#upload-photo-icon').click
         fill_in 'Title', with: 'ST'
         click_button 'Create Photo'
         expect(page).not_to have_css 'h2', text: 'ST'
@@ -64,7 +64,7 @@ end
 
 
 def sign_up
-  click_link 'Sign up'
+  find("#sign-up-icon").click
   fill_in 'Email', with: 'hadi@gmail.com'
   fill_in 'Password', with: '12345678'
   fill_in 'Password confirmation', with: '12345678'
