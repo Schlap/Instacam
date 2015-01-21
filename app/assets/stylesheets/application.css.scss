@@ -3,6 +3,7 @@
 body {
   font-family: "Futura (Light)";
   background: url('/images/waterfall.png') no-repeat fixed 95% 95%;
+  text-align: center;
 }
 
 .brand {
@@ -10,11 +11,43 @@ body {
   font-size: 2em;
 }
 
-.navbar {
-  text-align: center;
+.photo-body {
+  padding-top: 5%;
 }
 
-.photo-body {
-  text-align: center;
-  padding-top: 5%;
+a:-webkit-any-link {
+  color: -webkit-blue;
+  text-decoration: none;
+  cursor: auto;
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  color: white
+}
+
+section.image-container {
+  display: inline-block;
+  width: 460px;
+  padding-top: 15px;
+  padding-bottom: 45px;
+  background-color: #F2F1EF;
+  box-shadow: 5px 5px 5px black;
+}
+
+.user-email {
+  padding-top: 1%;
+}
+
+.camera {
+  float: left;
+  margin-left: 10%;
+  margin-top: 0.5%;
+}
+
+.login {
+  float: right;
+  margin-right: 10%;
+  margin-top: 1%;
 }
