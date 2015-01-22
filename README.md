@@ -10,6 +10,7 @@ Instacam is your photo sharing social media platform. Snap pictures then upload 
 
 - Ruby
 - Rails 4
+- Javascript
 - HTML5
 - CSS3
 - RSpec/Rails
