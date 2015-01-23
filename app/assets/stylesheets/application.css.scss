@@ -1,10 +1,17 @@
 @import "font-awesome";
 
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
 body {
   font-family: "Arabolical";
   text-align: center;
   background-color: black;
   color: white;
+  background-image: url("public/images/medium/dark-camera.png");
+  border: solid #6A5ACD 10px
 }
 
 a:-webkit-any-link {
